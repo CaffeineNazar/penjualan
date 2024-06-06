@@ -179,13 +179,4 @@ object Form2: TForm2
     TabOrder = 5
     OnClick = Button1Click
   end
-  object ComboBox1: TComboBox
-    Left = 128
-    Top = 88
-    Width = 145
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 6
-    Text = 'ComboBox1'
-  end
 end

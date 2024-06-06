@@ -3,7 +3,7 @@ object Form6: TForm6
   Top = 125
   Width = 870
   Height = 450
-  Caption = 'x`'
+  Caption = 'KOSTUMER'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

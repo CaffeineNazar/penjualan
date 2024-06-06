@@ -8,7 +8,8 @@ uses
   dataModul in 'dataModul.pas' {DataModule3: TDataModule},
   USatuan in 'USatuan.pas' {Form4},
   Usupplier in 'Usupplier.pas' {Form5},
-  Ukostumer in 'Ukostumer.pas' {Form6};
+  Ukostumer in 'Ukostumer.pas' {Form6},
+  Uuser7 in 'Uuser7.pas' {Form7};
 
 {$R *.res}
 
@@ -21,5 +22,6 @@ begin
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
+  Application.CreateForm(TForm7, Form7);
   Application.Run;
 end.

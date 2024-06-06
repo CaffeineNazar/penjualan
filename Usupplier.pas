@@ -17,6 +17,25 @@ type
     Bdelete: TButton;
     Edit2: TEdit;
     Button4: TButton;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Edit4: TEdit;
+    Label5: TLabel;
+    Edit5: TEdit;
+    Label6: TLabel;
+    Edit6: TEdit;
+    Label7: TLabel;
+    Edit7: TEdit;
+    Label8: TLabel;
+    Edit8: TEdit;
+    Label9: TLabel;
+    Edit9: TEdit;
+    Label10: TLabel;
+    Edit10: TEdit;
+    Label11: TLabel;
+    Edit11: TEdit;
+    Label12: TLabel;
     procedure BinsertClick(Sender: TObject);
     procedure BupdateClick(Sender: TObject);
     procedure BdeleteClick(Sender: TObject);
@@ -41,7 +60,7 @@ uses Unit2, dataModul;
 procedure TForm5.BinsertClick(Sender: TObject);
 begin
 DataModule3.ZSupplier.SQL.Clear;
-DataModule3.ZSupplier.SQL.Add('insert into supplier values(null, "'+Edit1.Text+'")');
+DataModule3.ZSupplier.SQL.Add('insert into supplier values(null, "'+Edit1.Text+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'","'+Edit6.Text+'","'+Edit7.Text+'","'+Edit8.Text+'","'+Edit9.Text+'","'+Edit10.Text+'", "'+Edit11.Text+'")');
 DataModule3.Zsupplier.ExecSQL;
 
 DataModule3.Zsupplier.SQL.Clear;

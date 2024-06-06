@@ -15,7 +15,6 @@ type
     Edit2: TEdit;
     StaticText2: TStaticText;
     Button2: TButton;
-    ComboBox1: TComboBox;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -35,7 +34,7 @@ uses Unit1;
 procedure TForm2.Button1Click(Sender: TObject);
 begin
 
-  if edit1.text = 'admin' && Edit2.Text = 'admin' then
+  if edit1.text = 'admin' then
   begin
   Form1.MainMenu1.Items[1].Visible:=True;
   Form1.MainMenu1.Items[2].Visible:=False;

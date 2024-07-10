@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 192
-  Top = 125
+  Left = 168
+  Top = 157
   Width = 870
   Height = 450
   Caption = 'SATUAN'
@@ -11,11 +11,12 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 240
-    Top = 40
+    Left = 208
+    Top = 32
     Width = 50
     Height = 23
     Caption = 'NAMA'
@@ -39,51 +40,51 @@ object Form4: TForm4
     Font.Style = []
     ParentFont = False
   end
-  object DBGrid1: TDBGrid
-    Left = 240
-    Top = 136
-    Width = 345
-    Height = 161
-    DataSource = DataModule3.DsSatuan
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+  object Label3: TLabel
+    Left = 208
+    Top = 64
+    Width = 93
+    Height = 23
+    Caption = 'DESKRIPSI'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Edit1: TEdit
     Left = 304
     Top = 32
     Width = 257
     Height = 21
-    TabOrder = 1
+    TabOrder = 0
   end
   object Binsert: TButton
     Left = 304
-    Top = 88
+    Top = 96
     Width = 75
     Height = 33
     Caption = 'INSERT'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = BinsertClick
   end
   object Bupdate: TButton
     Left = 392
-    Top = 88
+    Top = 96
     Width = 75
     Height = 33
     Caption = 'UPDATE'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = BupdateClick
   end
   object Bdelete: TButton
     Left = 480
-    Top = 88
+    Top = 96
     Width = 75
     Height = 33
     Caption = 'DELETE'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = BdeleteClick
   end
   object Edit2: TEdit
@@ -91,14 +92,46 @@ object Form4: TForm4
     Top = 320
     Width = 137
     Height = 21
+    TabOrder = 4
+    OnChange = Edit2Change
+  end
+  object Edit3: TEdit
+    Left = 304
+    Top = 64
+    Width = 257
+    Height = 21
     TabOrder = 5
   end
-  object Button4: TButton
-    Left = 528
-    Top = 320
-    Width = 65
-    Height = 41
-    Caption = 'CARI'
+  object DBGrid1: TDBGrid
+    Left = 216
+    Top = 136
+    Width = 425
+    Height = 145
+    DataSource = DataModule3.DsSatuan
     TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+  end
+  object Bnew: TButton
+    Left = 216
+    Top = 97
+    Width = 75
+    Height = 33
+    Caption = 'NEW'
+    TabOrder = 7
+    OnClick = BnewClick
+  end
+  object Bcancel: TButton
+    Left = 568
+    Top = 97
+    Width = 75
+    Height = 33
+    Caption = 'CANCEL'
+    TabOrder = 8
+    OnClick = BcancelClick
   end
 end

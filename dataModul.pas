@@ -8,7 +8,6 @@ uses
 
 type
   TDataModule3 = class(TDataModule)
-    ZConnection1: TZConnection;
     ZKategori: TZQuery;
     dsKategori: TDataSource;
     DsSatuan: TDataSource;
@@ -19,6 +18,7 @@ type
     ZKustomer: TZQuery;
     Zuser: TZQuery;
     DsUser: TDataSource;
+    ZConnection1: TZConnection;
   private
     { Private declarations }
   public

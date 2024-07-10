@@ -16,11 +16,18 @@ type
     Bdelete: TButton;
     Label2: TLabel;
     Edit2: TEdit;
-    Button4: TButton;
+    Bnew: TButton;
+    Bcancel: TButton;
     procedure BinsertClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure BupdateClick(Sender: TObject);
     procedure BdeleteClick(Sender: TObject);
+    procedure posisiawal;
+    procedure bersih;
+    procedure Button4Click(Sender: TObject);
+    procedure Edit2Change(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure BnewClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,47 +46,141 @@ uses
 
 procedure TForm3.BinsertClick(Sender: TObject);
 begin
-DataModule3.Zkategori.SQL.Clear;
-DataModule3.Zkategori.SQL.Add('insert into kategori values(null,"'+edit1.text+'")');
-DataModule3.Zkategori.ExecSQL;
+if Edit1.Text = '' then
+begin
+  ShowMessage('Nama Kategori Tidak Boleh Kosong!');
+end else
+if DataModule3.ZKategori.Locate('name',Edit1.Text,[]) then
+begin
+  ShowMessage('Nama Kategori' +Edit1.Text+' Sudah Ada Didalam Sistem');
+  end else
+  begin
+    with DataModule3.ZKategori do
+    begin
+      SQL.Clear;
+      SQL.Add('insert into kategori values(null, "'+Edit1.Text+'")');
+      ExecSQL;
 
-DataModule3.Zkategori.SQL.Clear;
-DataModule3.Zkategori.SQL.Add('select * from kategori');
-DataModule3.Zkategori.Open;
-ShowMessage('Data Berhasil Disimpan!');
+      SQL.Clear;
+      SQL.Add('select * from kategori');
+      Open;
+    end;
+    ShowMessage('Data berhasil Disimpan');
+  end;
+  posisiawal;
 end;
 
 procedure TForm3.DBGrid1CellClick(Column: TColumn);
 begin
 Edit1.Text:= DataModule3.ZKategori.Fields[1].AsString;
 a:= DataModule3.ZKategori.Fields[0].AsString;
+
+Edit1.Enabled:=True;
+Bnew.Enabled:=False;
+Binsert.Enabled:=False;
+Bupdate.Enabled:=True;
+Bdelete.Enabled:=True;
+Bcancel.Enabled:=False;
 end;
 
 procedure TForm3.BupdateClick(Sender: TObject);
 begin
-DataModule3.ZKategori.SQL.Clear;
-DataModule3.ZKategori.SQL.Add('update kategori set name = "'+Edit1.Text+'" where id = "'+a+'"');
-DataModule3.ZKategori.ExecSQL;
+  if Edit1.Text = '' then
+  begin
+    ShowMessage('Nama Kategori Tidak Boleh Kosong!');
+  end else
+  if Edit1.Text = DataModule3.ZKategori.Fields[1].AsString then
+  begin
+    ShowMessage('Nama Kategori '+Edit1.Text+'Tidak Ada Perubahan');
+  end else
+  begin
+    with DataModule3.ZKategori do
+    begin
+      SQL.Clear;
+      SQL.Add('update kategori set name = "'+Edit1.Text+'" where id="'+a+'"');
+      ExecSQL;
 
-DataModule3.ZKategori.SQL.Clear;
-DataModule3.ZKategori.SQL.Add('select * from kategori');
-DataModule3.ZKategori.Open;
-ShowMessage('Data Berhasil Diupdate');
+      SQL.Clear;
+      SQL.Add('select * from kategori');
+      Open;
+    end;
+    ShowMessage('Data berhasil Diubah');
+  end;
+  posisiawal;
 end;
 
 procedure TForm3.BdeleteClick(Sender: TObject);
 begin
-with DataModule3.ZKategori do
+  if MessageDlg('Apakah Anda yakin menghapus Data ini',mtWarning,[mbYes,mbNo],0)=mryes then
+  begin
+    with DataModule3.ZKategori do
+    begin
+    SQL.Clear;
+    SQL.Add('delete from kategori where id = "'+a+'"');
+    ExecSQL;
+
+    SQL.Clear;
+    SQL.Add('select * from kategori');
+    Open;
+    end;
+    ShowMessage('Data berhasil Didelete!');
+  end else
+  begin                                    
+    ShowMessage('Data Batal Dihapus!');
+  end;
+  posisiawal;
+end;
+
+procedure TForm3.posisiawal;
 begin
-  SQL.Clear;
-  SQL.Add('delete from kategori where id = "'+a+'"');
-  ExecSQL;
-
-  SQL.Clear;
-  SQL.Add('select * from kategori');
-  Open;
+Bnew.Enabled:= True;
+Binsert.Enabled:= false;
+Bupdate.Enabled:= false;
+Bdelete.Enabled:= false;
+Bcancel.Enabled:= false;
+Edit1.clear;
+Edit1.Enabled:= False;
 end;
-ShowMessage('Data Berhasil Di delete');
 
+procedure TForm3.Button4Click(Sender: TObject);
+begin
+with DataModule3.Zkategori do
+begin
+SQL.Clear;
+SQL.Add('select * from kategori where name = "'+Edit1.Text+'"');
+Open;
 end;
+end;
+
+procedure TForm3.Edit2Change(Sender: TObject);
+begin
+with DataModule3.Zkategori do
+begin
+SQL.Clear;
+SQL.Add('select * from kategori where name like "%'+Edit2.Text+'%"');
+Open;
+end;
+end;
+
+procedure TForm3.bersih;
+begin
+Edit1.Clear;
+end;
+
+procedure TForm3.FormShow(Sender: TObject);
+begin
+    posisiawal;
+end;
+
+procedure TForm3.BnewClick(Sender: TObject);
+begin
+bersih;
+Bnew.Enabled:= false;
+Binsert.Enabled:= True;
+Bupdate.Enabled:= False;
+Bdelete.Enabled:= False;
+Bcancel.Enabled:= True;
+Edit1.Enabled:= True;
+end;
+
 end.

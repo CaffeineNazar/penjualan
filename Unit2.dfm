@@ -121,7 +121,7 @@ object Form2: TForm2
   end
   object Edit1: TEdit
     Left = 512
-    Top = 112
+    Top = 128
     Width = 161
     Height = 21
     TabOrder = 0
@@ -137,7 +137,7 @@ object Form2: TForm2
   end
   object StaticText1: TStaticText
     Left = 400
-    Top = 112
+    Top = 128
     Width = 86
     Height = 23
     Caption = 'USERNAME'
@@ -149,34 +149,13 @@ object Form2: TForm2
     ParentFont = False
     TabOrder = 2
   end
-  object Edit2: TEdit
-    Left = 512
-    Top = 152
-    Width = 161
-    Height = 21
-    TabOrder = 3
-  end
-  object StaticText2: TStaticText
-    Left = 400
-    Top = 152
-    Width = 89
-    Height = 23
-    Caption = 'PASSWORD'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 4
-  end
   object Button2: TButton
     Left = 600
     Top = 200
     Width = 75
     Height = 25
     Caption = 'CLOSE'
-    TabOrder = 5
+    TabOrder = 3
     OnClick = Button1Click
   end
 end

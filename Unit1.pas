@@ -31,6 +31,7 @@ type
     procedure SATUAN1Click(Sender: TObject);
     procedure KUSTOMER1Click(Sender: TObject);
     procedure SUPPLIER1Click(Sender: TObject);
+    procedure USER1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +43,7 @@ var
 
 implementation
 
-uses Unit2, Ukategori, USatuan, Ukostumer, Usupplier;
+uses Unit2, Ukategori, USatuan, Ukostumer, Usupplier, Uuser7;
 
 {$R *.dfm}
 
@@ -76,6 +77,11 @@ end;
 procedure TForm1.SUPPLIER1Click(Sender: TObject);
 begin
 form5.Show;
+end;
+
+procedure TForm1.USER1Click(Sender: TObject);
+begin
+form7.show;
 end;
 
 end.

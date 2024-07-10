@@ -12,8 +12,6 @@ type
     Button1: TButton;
     Image1: TImage;
     StaticText1: TStaticText;
-    Edit2: TEdit;
-    StaticText2: TStaticText;
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
   private

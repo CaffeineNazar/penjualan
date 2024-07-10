@@ -1,8 +1,9 @@
 object Form5: TForm5
-  Left = 242
-  Top = 113
-  Width = 870
-  Height = 450
+  Left = 212
+  Top = 74
+  Width = 1006
+  Height = 533
+  VertScrollBar.Position = 95
   Caption = 'SUPPLIER'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,11 +12,12 @@ object Form5: TForm5
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 384
-    Top = 40
+    Left = 376
+    Top = -63
     Width = 31
     Height = 23
     Caption = 'NIK'
@@ -27,8 +29,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 464
-    Top = 592
+    Left = 376
+    Top = 473
     Width = 124
     Height = 19
     Caption = 'MASUKAN NAMA'
@@ -40,21 +42,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 384
-    Top = 104
-    Width = 41
-    Height = 23
-    Caption = 'TELP'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 384
-    Top = 136
+    Left = 376
+    Top = 1
     Width = 41
     Height = 23
     Caption = 'TELP'
@@ -66,8 +55,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 384
-    Top = 168
+    Left = 376
+    Top = 33
     Width = 53
     Height = 23
     Caption = 'EMAIL'
@@ -79,8 +68,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 384
-    Top = 200
+    Left = 376
+    Top = 65
     Width = 68
     Height = 23
     Caption = 'ALAMAT'
@@ -92,8 +81,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 384
-    Top = 232
+    Left = 376
+    Top = 97
     Width = 115
     Height = 23
     Caption = 'PERUSAHAAN'
@@ -105,8 +94,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 384
-    Top = 264
+    Left = 376
+    Top = 129
     Width = 106
     Height = 23
     Caption = 'NAMA_BANK'
@@ -118,8 +107,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 384
-    Top = 296
+    Left = 376
+    Top = 161
     Width = 163
     Height = 23
     Caption = 'NAMA_AKUN_BANK'
@@ -131,8 +120,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 384
-    Top = 72
+    Left = 376
+    Top = -31
     Width = 50
     Height = 23
     Caption = 'NAME'
@@ -145,7 +134,7 @@ object Form5: TForm5
   end
   object Label11: TLabel
     Left = -112
-    Top = 120
+    Top = 25
     Width = 31
     Height = 23
     Caption = 'NIK'
@@ -157,8 +146,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 384
-    Top = 328
+    Left = 376
+    Top = 193
     Width = 139
     Height = 23
     Caption = 'NO_AKUN_BANK'
@@ -170,8 +159,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object DBGrid1: TDBGrid
-    Left = 384
-    Top = 400
+    Left = 376
+    Top = 297
     Width = 433
     Height = 161
     DataSource = DataModule3.DsSupplier
@@ -184,15 +173,15 @@ object Form5: TForm5
     OnCellClick = DBGrid1CellClick
   end
   object Edit1: TEdit
-    Left = 560
-    Top = 40
+    Left = 552
+    Top = -63
     Width = 257
     Height = 21
     TabOrder = 1
   end
   object Binsert: TButton
-    Left = 528
-    Top = 360
+    Left = 464
+    Top = 249
     Width = 75
     Height = 33
     Caption = 'INSERT'
@@ -200,8 +189,8 @@ object Form5: TForm5
     OnClick = BinsertClick
   end
   object Bupdate: TButton
-    Left = 616
-    Top = 360
+    Left = 552
+    Top = 249
     Width = 75
     Height = 33
     Caption = 'UPDATE'
@@ -209,8 +198,8 @@ object Form5: TForm5
     OnClick = BupdateClick
   end
   object Bdelete: TButton
-    Left = 704
-    Top = 360
+    Left = 640
+    Top = 249
     Width = 75
     Height = 33
     Caption = 'DELETE'
@@ -218,81 +207,84 @@ object Form5: TForm5
     OnClick = BdeleteClick
   end
   object Edit2: TEdit
-    Left = 600
-    Top = 584
-    Width = 137
+    Left = 560
+    Top = 473
+    Width = 241
     Height = 21
     TabOrder = 5
-  end
-  object Button4: TButton
-    Left = 752
-    Top = 584
-    Width = 65
-    Height = 41
-    Caption = 'CARI'
-    TabOrder = 6
+    OnChange = Edit2Change
   end
   object Edit3: TEdit
-    Left = 560
-    Top = 72
+    Left = 552
+    Top = -31
+    Width = 257
+    Height = 21
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 552
+    Top = 1
     Width = 257
     Height = 21
     TabOrder = 7
   end
-  object Edit4: TEdit
-    Left = 560
-    Top = 104
+  object Edit5: TEdit
+    Left = 552
+    Top = 33
     Width = 257
     Height = 21
     TabOrder = 8
   end
-  object Edit5: TEdit
-    Left = 560
-    Top = 136
+  object Edit6: TEdit
+    Left = 552
+    Top = 65
     Width = 257
     Height = 21
     TabOrder = 9
   end
-  object Edit6: TEdit
-    Left = 560
-    Top = 168
+  object Edit7: TEdit
+    Left = 552
+    Top = 97
     Width = 257
     Height = 21
     TabOrder = 10
   end
-  object Edit7: TEdit
-    Left = 560
-    Top = 200
+  object Edit8: TEdit
+    Left = 552
+    Top = 129
     Width = 257
     Height = 21
     TabOrder = 11
   end
-  object Edit8: TEdit
-    Left = 560
-    Top = 232
+  object Edit9: TEdit
+    Left = 552
+    Top = 161
     Width = 257
     Height = 21
     TabOrder = 12
   end
-  object Edit9: TEdit
-    Left = 560
-    Top = 264
+  object Edit10: TEdit
+    Left = 552
+    Top = 193
     Width = 257
     Height = 21
     TabOrder = 13
   end
-  object Edit10: TEdit
-    Left = 560
-    Top = 296
-    Width = 257
-    Height = 21
+  object Bnew: TButton
+    Left = 376
+    Top = 250
+    Width = 75
+    Height = 33
+    Caption = 'NEW'
     TabOrder = 14
+    OnClick = BnewClick
   end
-  object Edit11: TEdit
-    Left = 560
-    Top = 328
-    Width = 257
-    Height = 21
+  object Bcancel: TButton
+    Left = 728
+    Top = 250
+    Width = 75
+    Height = 33
+    Caption = 'CANCEL'
     TabOrder = 15
   end
 end

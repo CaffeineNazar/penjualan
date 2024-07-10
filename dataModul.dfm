@@ -4,21 +4,6 @@ object DataModule3: TDataModule3
   Top = 102
   Height = 202
   Width = 441
-  object ZConnection1: TZConnection
-    ControlsCodePage = cGET_ACP
-    AutoEncodeStrings = False
-    Connected = True
-    HostName = 'localhost'
-    Port = 3306
-    Database = 'db_penjualan'
-    User = 'root'
-    Protocol = 'mysql'
-    LibraryLocation = 
-      'C:\Users\hp080\OneDrive\Documents\Dokumen Kuliah Sem. 2\Visual 1' +
-      '\latihan visual\libmysql32.dll'
-    Left = 32
-    Top = 24
-  end
   object ZKategori: TZQuery
     Connection = ZConnection1
     Active = True
@@ -88,5 +73,19 @@ object DataModule3: TDataModule3
     DataSet = Zuser
     Left = 280
     Top = 80
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    AutoEncodeStrings = False
+    Connected = True
+    Port = 3306
+    Database = 'db_penjualan'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'C:\Users\hp080\OneDrive\Documents\Dokumen Kuliah Sem. 2\Visual 1' +
+      '\latihan visual\libmysql32.dll'
+    Left = 32
+    Top = 32
   end
 end

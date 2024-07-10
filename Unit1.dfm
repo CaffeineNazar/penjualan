@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 179
-  Top = 210
+  Left = 343
+  Top = 195
   Width = 870
   Height = 450
   Caption = 'DASHBOARD'
@@ -48,6 +48,7 @@ object Form1: TForm1
       end
       object USER1: TMenuItem
         Caption = 'USER'
+        OnClick = USER1Click
       end
     end
     object RANSAKSI1: TMenuItem

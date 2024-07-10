@@ -1,8 +1,8 @@
 object Form3: TForm3
-  Left = 276
-  Top = 136
-  Width = 870
-  Height = 410
+  Left = 216
+  Top = 165
+  Width = 810
+  Height = 419
   Caption = 'KATEGORI'
   Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
@@ -11,11 +11,12 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 240
-    Top = 40
+    Top = 48
     Width = 50
     Height = 23
     Caption = 'NAMA'
@@ -28,7 +29,7 @@ object Form3: TForm3
   end
   object Label2: TLabel
     Left = 240
-    Top = 328
+    Top = 320
     Width = 124
     Height = 19
     Caption = 'MASUKAN NAMA'
@@ -42,7 +43,7 @@ object Form3: TForm3
   object DBGrid1: TDBGrid
     Left = 240
     Top = 136
-    Width = 345
+    Width = 417
     Height = 161
     DataSource = DataModule3.dsKategori
     TabOrder = 0
@@ -55,13 +56,13 @@ object Form3: TForm3
   end
   object Edit1: TEdit
     Left = 304
-    Top = 32
-    Width = 257
+    Top = 48
+    Width = 353
     Height = 21
     TabOrder = 1
   end
   object Binsert: TButton
-    Left = 304
+    Left = 320
     Top = 88
     Width = 75
     Height = 33
@@ -70,7 +71,7 @@ object Form3: TForm3
     OnClick = BinsertClick
   end
   object Bupdate: TButton
-    Left = 392
+    Left = 408
     Top = 88
     Width = 75
     Height = 33
@@ -79,7 +80,7 @@ object Form3: TForm3
     OnClick = BupdateClick
   end
   object Bdelete: TButton
-    Left = 480
+    Left = 496
     Top = 88
     Width = 75
     Height = 33
@@ -90,16 +91,26 @@ object Form3: TForm3
   object Edit2: TEdit
     Left = 376
     Top = 320
-    Width = 137
+    Width = 281
     Height = 21
     TabOrder = 5
+    OnChange = Edit2Change
   end
-  object Button4: TButton
-    Left = 528
-    Top = 320
-    Width = 65
-    Height = 41
-    Caption = 'CARI'
+  object Bnew: TButton
+    Left = 232
+    Top = 89
+    Width = 75
+    Height = 33
+    Caption = 'NEW'
     TabOrder = 6
+    OnClick = BnewClick
+  end
+  object Bcancel: TButton
+    Left = 584
+    Top = 89
+    Width = 75
+    Height = 33
+    Caption = 'CANCEL'
+    TabOrder = 7
   end
 end

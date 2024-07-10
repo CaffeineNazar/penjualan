@@ -9,7 +9,8 @@ uses
   USatuan in 'USatuan.pas' {Form4},
   Usupplier in 'Usupplier.pas' {Form5},
   Ukostumer in 'Ukostumer.pas' {Form6},
-  Uuser7 in 'Uuser7.pas' {Form7};
+  Uuser7 in 'Uuser7.pas' {Form7},
+  Ureport in 'Ureport.pas' {Form8};
 
 {$R *.res}
 
@@ -23,5 +24,6 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TForm8, Form8);
   Application.Run;
 end.
